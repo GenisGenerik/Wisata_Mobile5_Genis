@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wisata_mobile5_genis/materiModulScreen/fromScreen6.dart';
+import 'package:wisata_mobile5_genis/screens/homescreen.dart';
 
 void main() {
   runApp(const TravelApp());
@@ -12,7 +12,7 @@ class TravelApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FromScreen6(),
+      home: HomeScreen(),
     );
   }
 }

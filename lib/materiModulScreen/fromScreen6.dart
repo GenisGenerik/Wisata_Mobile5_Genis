@@ -29,7 +29,7 @@ class _FromScreen6State extends State<FromScreen6> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
-          title: Text("$tampil"),
+          title: Text(tampil),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16),
@@ -46,15 +46,15 @@ class _FromScreen6State extends State<FromScreen6> {
                 decoration: InputDecoration(
                     labelText: 'Masukan Nama',
                     border: OutlineInputBorder(
-                        borderSide: BorderSide(width: 2),
+                        borderSide: const BorderSide(width: 2),
                         borderRadius: BorderRadius.circular(5))),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
                 children: [
-                  Text("Jenis Kelamin : "),
+                  const Text("Jenis Kelamin : "),
                   Radio(
                       value: "Laki-Laki",
                       groupValue: selectionRadio,
@@ -63,7 +63,7 @@ class _FromScreen6State extends State<FromScreen6> {
                           selectionRadio = value.toString();
                         });
                       }),
-                  Text("Laki-Laki"),
+                  const Text("Laki-Laki"),
                   Radio(
                       value: "Perempuan",
                       groupValue: selectionRadio,
@@ -72,14 +72,14 @@ class _FromScreen6State extends State<FromScreen6> {
                           selectionRadio = value.toString();
                         });
                       }),
-                  Text("Perempuan"),
+                  const Text("Perempuan"),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               CheckboxListTile(
-                  title: Text('Olahraga'),
+                  title: const Text('Olahraga'),
                   value: olahraga,
                   onChanged: (value) {
                     setState(() {
@@ -91,7 +91,7 @@ class _FromScreen6State extends State<FromScreen6> {
                     });
                   }),
               CheckboxListTile(
-                  title: Text('Seni'),
+                  title: const Text('Seni'),
                   value: seni,
                   onChanged: (value) {
                     setState(() {
@@ -102,11 +102,11 @@ class _FromScreen6State extends State<FromScreen6> {
                       }
                     });
                   }),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               SwitchListTile(
-                  title: Text('Lulus'),
+                  title: const Text('Lulus'),
                   value: switchValue,
                   onChanged: (value) {
                     setState(() {
@@ -115,12 +115,12 @@ class _FromScreen6State extends State<FromScreen6> {
                   }),
               ElevatedButton(
                 onPressed: jalan,
-                child: Text("Submit"),
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.redAccent,
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5))),
+                child: const Text("Submit"),
               ),
               Text(jalan())
             ],
