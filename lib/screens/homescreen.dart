@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wisata_mobile5_genis/models/destination_model.dart';
+import 'package:wisata_mobile5_genis/screens/detaildestinasi.dart';
 import 'package:wisata_mobile5_genis/utils/const.dart';
 import 'package:wisata_mobile5_genis/widget/popular_destination.dart';
 import 'package:wisata_mobile5_genis/widget/rekomendasi_destination.dart';
@@ -73,7 +74,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   (index) => Padding(
                         padding: EdgeInsets.only(right: 15),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => DetailDestinasiScreen(
+                                      destination: popular[index]),
+                                ));
+                          },
                           child:
                               PopularDestination(destination: popular[index]),
                         ),
@@ -115,12 +123,50 @@ class _HomeScreenState extends State<HomeScreen> {
                     (index) => Padding(
                           padding: EdgeInsets.only(bottom: 10),
                           child: GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => DetailDestinasiScreen(
+                                        destination: rekomendasi[index]),
+                                  ));
+                            },
                             child: RekomendasiDestination(
                                 destination: rekomendasi[index]),
                           ),
                         )),
               ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 18),
+                  decoration: BoxDecoration(
+                      color: kButtonColor,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: List.generate(
+                        icons.length,
+                        (index) => GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  selectedPage = index;
+                                });
+                              },
+                              child: Icon(icons[index],
+                                  size: 32,
+                                  color: selectedPage == index
+                                      ? Colors.white
+                                      : Colors.white.withOpacity(0.3)),
+                            )),
+                  ),
+                ),
+              ],
             ),
           )
         ],
