@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(height: 20),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 15),
-            child: const Row(
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
@@ -62,17 +62,17 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(bottom: 20, left: 20),
+            padding: const EdgeInsets.only(bottom: 20, left: 20),
             child: Row(
               children: List.generate(
                   popular.length,
                   (index) => Padding(
-                        padding: EdgeInsets.only(right: 15),
+                        padding: const EdgeInsets.only(right: 15),
                         child: GestureDetector(
                           onTap: () {
                             Navigator.push(
@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 15),
-            child: const Row(
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
@@ -110,18 +110,18 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Expanded(
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Column(
                 children: List.generate(
                     rekomendasi.length,
                     (index) => Padding(
-                          padding: EdgeInsets.only(bottom: 10),
+                          padding: const EdgeInsets.only(bottom: 10),
                           child: GestureDetector(
                             onTap: () {
                               Navigator.push(
@@ -144,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 18),
+                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 18),
                   decoration: BoxDecoration(
                       color: kButtonColor,
                       borderRadius: BorderRadius.circular(10)),
